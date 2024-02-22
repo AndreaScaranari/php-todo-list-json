@@ -21,6 +21,10 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
+    
+    <div id="app">
+
+    </div>
 
 </body>
 </html>
