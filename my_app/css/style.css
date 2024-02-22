@@ -10,5 +10,5 @@ ul {
 
 li {
     list-style-type: none;
-    padding-left: 4px;
+    padding: 0.5rem 0.25rem;
 }

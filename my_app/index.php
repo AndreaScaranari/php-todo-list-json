@@ -27,11 +27,11 @@
         <form action="" method="POST" class="input-group.text">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" placeholder="Inserisci nuovo task...">
-                <span class="input-group-text" id="basic-addon2">@example.com</span>
+                <span class="input-group-text" id="basic-addon2">Inserisci</span>
             </div>
         </form>
         <ul class="rounded p-2">
-            <li>First Task</li>
+            <li v-for="task in tasks" key="task.id">{{task.text}}</li>
         </ul>
     </div>
 
