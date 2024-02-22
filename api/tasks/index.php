@@ -1,30 +1,21 @@
 <?php
 
-$tasks = [
-    [
-      "id" => 1,
-      "text" => "HTML",
-      "done" => false
-    ],
-    [
-      "id" => 2,
-      "text" => "CSS",
-      "done" => false
-    ],
-    [
-      "id" => 3,
-      "text" => "Responsive design",
-      "done" => false
-    ],
-    [
-      "id" => 4,
-      "text" => "Javascript",
-      "done" => false
-    ]
-  ];
-
 header('Content-Type: application/json');
 
-echo json_encode($tasks);
+$source_path = __DIR__ . '/../../database/tasks.json';
+
+$json_data = file_get_contents($source_path);
+$tasks = $json_data;
+
+$new_task = $_POST['task'] ?? '';
+
+if($new_task) {
+    $tasks = json_decode($json_data, true);
+    $tasks[] = $new_task;
+    json_encode($tasks);
+    // file_put_contents($source_path, $tasks);
+}
+
+echo $tasks;
 
 ?>
