@@ -1,0 +1,14 @@
+.container-cs {
+    width: 60%;
+    margin: 0 auto;
+}
+
+ul {
+    background-color: #F8F9FA;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 4px;
+}

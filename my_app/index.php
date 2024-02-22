@@ -21,9 +21,18 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    
-    <div id="app">
 
+    <div id="app" class="container-cs">
+        <h1 class="text-center py-3">Todo List</h1>
+        <form action="" method="POST" class="input-group.text">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" placeholder="Inserisci nuovo task...">
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+            </div>
+        </form>
+        <ul class="rounded p-2">
+            <li>First Task</li>
+        </ul>
     </div>
 
 </body>
