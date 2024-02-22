@@ -11,4 +11,10 @@ ul {
 li {
     list-style-type: none;
     padding: 0.5rem 0.25rem;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: #cccccc;
+
 }
