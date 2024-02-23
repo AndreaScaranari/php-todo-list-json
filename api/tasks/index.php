@@ -11,7 +11,13 @@ $new_task = $_POST['task'] ?? '';
 
 if($new_task) {
     $tasks = json_decode($json_data, true);
-    $tasks[] = $new_task;
+    $todoTask = [
+        'id' => count($tasks),
+        'text' => $new_task,
+        'done' => false
+    ];
+    $tasks[] = $todoTask;
+
     json_encode($tasks);
     // file_put_contents($source_path, $tasks);
 }
