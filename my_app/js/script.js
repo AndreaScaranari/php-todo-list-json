@@ -23,6 +23,15 @@ const app = createApp({
                 this.tasks = res.data;
             })
         }
+
+        // toggleTask(id) {
+        //     const data = new FormData();
+        //     data.append(id, id)
+        //     axios.post(`${endpoint}toggle/`, data, config).then(res => {
+        //         this.tasks = res.data;
+        //     })
+        // }
+
     },
     created() {
         axios.get(endpoint).then(res => {
