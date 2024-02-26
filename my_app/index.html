@@ -28,18 +28,16 @@
 <body>
 
     <div id="app" class="container-cs">
-        <h1 class="text-center py-3">Todo List</h1>
-        <form action="" method="POST" class="input-group.text">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Recipient's username"
-                    aria-label="Recipient's username" aria-describedby="basic-addon2"
-                    placeholder="Inserisci nuovo task...">
-                <span class="input-group-text" id="basic-addon2">Inserisci</span>
-            </div>
+        <h1 class="text-center py-3 m-0">Todo List</h1>
+
+        <form @submit.prevent="addTask" class="d-flex justify-content-center pb-3">
+            <input type="text" v-model="newTask">
+            <button type="submit">Aggiungi!</button>
         </form>
+
         <ul class="rounded p-2">
-            <li v-for="task in tasks" :key="task.id" class="rounded">
-                <span :class={"text-decoration-line-through":task.done}>{{task.text}}</span>
+            <li v-for="(task, i) in tasks" :key="i" class="rounded">
+                <span>{{task}}</span>
             </li>
         </ul>
     </div>
