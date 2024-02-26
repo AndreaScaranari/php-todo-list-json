@@ -11,11 +11,13 @@ $task_text = $_POST['task'] ?? '';
 if($task_text) {
     $tasks = json_decode($tasks, true);
 
-    $tasks = [
-        'id' => uniqid();
-        'text' => $task_text;
-        'done' => false;
+    $new_tasks = [
+        'id' => uniqid(),
+        'text' => $task_text,
+        'done' => false
     ];
+
+    $tasks[] = $new_tasks;
 
     $tasks = json_encode($tasks);
 
