@@ -7,15 +7,15 @@ $source_path = __DIR__ . '/../../database/tasks.json';
 $json_data = file_get_contents($source_path);
 $tasks = $json_data;
 
-$new_task = $_POST['task'] ?? '';
-if($new_task) {
-    $tasks = json_decode($tasks);
+$task_text = $_POST['task'] ?? '';
+if($task_text) {
+    $tasks = json_decode($tasks, true);
 
-    if(in_array($new_task, $tasks)){
-        echo json_encode('{"error": "Si è verificato un errore"}');
-    } else {
-        $tasks[] = $new_task;
-    }
+    $tasks = [
+        'id' => uniqid();
+        'text' => $task_text;
+        'done' => false;
+    ];
 
     $tasks = json_encode($tasks);
 
