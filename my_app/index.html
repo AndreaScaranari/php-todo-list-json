@@ -37,7 +37,8 @@
 
         <ul class="rounded p-2">
             <li v-for="task in tasks" :key="task.id" class="rounded">
-                <span :class="{'text-decoration-line-through': task.done}">{{task.text}}</span>
+                <span @click="toggleTask(task.id)"
+                    :class="{'text-decoration-line-through': task.done}">{{task.text}}</span>
             </li>
         </ul>
     </div>

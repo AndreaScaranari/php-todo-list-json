@@ -15,6 +15,13 @@ const app = createApp({
                 this.tasks = res.data;
                 this.newTask = '';
             });
+        },
+        toggleTask(id) {
+            const data = { id }
+            const config = { headers: { 'Content-Type': 'multipart/form-data' } }
+            axios.post(`${endpoint}toggle/`, data, config).then(res => {
+                this.tasks = res.data;
+            })
         }
     },
     created() {
