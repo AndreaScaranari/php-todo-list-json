@@ -22,7 +22,7 @@ const app = createApp({
             axios.post(`${endpoint}toggle/`, data, config).then(res => {
                 this.tasks = res.data;
             })
-        }
+        },
 
         // toggleTask(id) {
         //     const data = new FormData();
@@ -32,6 +32,13 @@ const app = createApp({
         //     })
         // }
 
+        deleteTask(id) {
+            const data = { id }
+            const config = { headers: { 'Content-Type': 'multipart/form-data' } }
+            axios.post(`${endpoint}delete/`, data, config).then(res => {
+                this.tasks = res.data;
+            })
+        }
     },
     created() {
         axios.get(endpoint).then(res => {
